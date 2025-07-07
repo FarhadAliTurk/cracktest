@@ -1,6 +1,6 @@
-# CrackIt - React Quiz App for Job Test Preparation
+# CrackTest - React Quiz App for Job Test Preparation
 
-**CrackIt** is a modern, responsive React-based quiz app built to help students and job seekers in Pakistan prepare for competitive exams like **IBA, NTS, STS, PTS, SPSC**, and others. It includes 12+ subject-wise quiz categories, modern UI, and smooth performance.
+**CrackTest** is a modern, responsive React-based quiz app built to help students and job seekers in Pakistan prepare for competitive exams like **IBA, NTS, STS, PTS, SPSC**, and others. It includes 12+ subject-wise quiz categories, modern UI, and smooth performance.
 
 ---
 
