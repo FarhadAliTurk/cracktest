@@ -11,9 +11,7 @@ const Navbar = () => {
   // Scroll detection with throttle
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50);
-
     const scrollPosition = window.scrollY + 100;
-
     for (const section of sectionsRef.current) {
       if (!section) continue;
       const { offsetTop, offsetHeight, id } = section;
@@ -27,29 +25,21 @@ const Navbar = () => {
   }, [activeSection]);
 
   useEffect(() => {
-    // Cache refs only once
     sectionsRef.current = [
-      'home',
-      'about',
-      'categories',
-      'premium',
-      'features',
-      'testimonials',
-      'contact'
+      'home', 'about', 'categories', 'premium',
+      'features', 'testimonials', 'contact'
     ].map(id => document.getElementById(id));
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  // Toggle body scroll
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
   }, [mobileMenuOpen]);
 
-  // Close mobile menu on Escape key
   useEffect(() => {
-    const handleKeyDown = e => {
+    const handleKeyDown = (e) => {
       if (e.key === 'Escape' && mobileMenuOpen) {
         setMobileMenuOpen(false);
       }
@@ -61,27 +51,33 @@ const Navbar = () => {
   const handleNavClick = (id) => {
     setActiveSection(id);
     setMobileMenuOpen(false);
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}>
       <div className="container">
         <a href="#home" className="navbar-brand" aria-label="CrackIt Home">
-          <span className="logo-text">CrackIt</span>
-          <span className="logo-dot" aria-hidden="true"></span>
+          <span className="logo-text">CrackTest</span>
+          <span className="logo-dot" aria-hidden="true">.</span>
         </a>
 
         <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(prev => !prev)}
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
           aria-controls="main-navigation"
         >
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        <nav id="main-navigation" className={`navbar-nav ${mobileMenuOpen ? 'open' : ''}`} role="navigation">
+        <nav
+          id="main-navigation"
+          className={`navbar-nav ${mobileMenuOpen ? 'open' : ''}`}
+          role="navigation"
+        >
           <div className="nav-links">
             {[
               { id: 'home', label: 'Home' },
@@ -96,7 +92,10 @@ const Navbar = () => {
                 key={id}
                 href={`#${id}`}
                 className={`nav-link ${id === 'premium' ? 'premium-link' : ''} ${activeSection === id ? 'active' : ''}`}
-                onClick={() => handleNavClick(id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(id);
+                }}
                 aria-current={activeSection === id ? 'page' : undefined}
               >
                 <span>{label}</span>

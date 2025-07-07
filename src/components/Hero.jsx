@@ -14,6 +14,7 @@ const Hero = () => {
     <section id="home" className="hero-section" aria-label="Hero section">
       <div className="hero-container">
         <div className="hero-content">
+
           {/* Text Content */}
           <div className="hero-text">
             <h1 className="hero-title">
@@ -25,7 +26,7 @@ const Hero = () => {
 
             {/* CTA + Stats */}
             <div className="hero-cta">
-              <button 
+              <button
                 className="btn btn-primary btn-lg hover-scale"
                 onClick={scrollToCategories}
                 aria-label="Start practicing quizzes"
@@ -76,6 +77,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

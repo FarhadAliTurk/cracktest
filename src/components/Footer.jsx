@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div className="footer-brand">
             <div className="footer-logo">
-              CrackIt<span className="dot"></span>
+              CrackTest<span className="dot"></span>
             </div>
             <p className="tagline">
               Pakistan’s leading platform for test preparation — trusted by thousands of successful candidates.

@@ -4,8 +4,7 @@ import './styles/base.css';
 import './styles/utilities.css';
 import './styles/animations.css';
 import './styles/loader.css';
-import Hero from './components/Hero';
-
+import Hero from './components/Hero'; // Hero loaded eagerly for LCP boost
 
 // Lazy-loaded components
 const Navbar = lazy(() => import('./components/Navbar'));
@@ -21,15 +20,14 @@ function App() {
   return (
     <div className="app">
       <Suspense
-            fallback={
-  <div className="loader-container">
-    <div className="text-logo-loader">
-      <span className="logo-text">CrackIt</span>
-      <span className="logo-dot">.</span>
-    </div>
-  </div>
-}
-
+        fallback={
+          <div className="loader-container" style={{ minHeight: '100vh' }}>
+            <div className="text-logo-loader">
+              <span className="logo-text">CrackTest</span>
+              <span className="logo-dot">.</span>
+            </div>
+          </div>
+        }
       >
         <Navbar />
         <Hero />

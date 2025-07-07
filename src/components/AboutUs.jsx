@@ -23,7 +23,7 @@ const AboutUs = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="about-title">About CrackIt</h2>
+        <h2 className="about-title">About CrackTest</h2>
         <p className="about-description">
           CrackIt is Pakistan’s trusted exam prep platform helping students crack Grade 14+ government tests with smart MCQs and real-time insights.
         </p>
