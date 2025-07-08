@@ -25,8 +25,8 @@ const Contact = () => {
             } />
             <ContactItem icon={<FaEnvelope />} title="Email" text={
               <>
-                <a href="mailto:info@crackit.com">info@crackit.com</a><br />
-                <a href="mailto:support@crackit.com">support@crackit.com</a>
+                <a href="mailto:info@cracktest.com">info@cracktest.com</a><br />
+                <a href="mailto:support@cracktest.com">support@cracktest.com</a>
               </>
             } />
             <ContactItem icon={<FaClock />} title="Hours" text="Mon–Fri: 9AM–6PM | Sat: 10AM–4PM" />

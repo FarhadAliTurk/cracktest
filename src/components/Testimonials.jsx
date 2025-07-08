@@ -7,7 +7,7 @@ import Avatar3 from '../assets/avatars/user3.webp';
 
 const testimonials = [
   {
-    text: "CrackIt helped me secure my position as an Assistant Director. Their practice tests mirrored the actual exam perfectly!",
+    text: "CrackTest helped me secure my position as an Assistant Director. Their practice tests mirrored the actual exam perfectly!",
     author: "Ahmed Raza",
     role: "Assistant Director, FPSC",
     avatar: Avatar1

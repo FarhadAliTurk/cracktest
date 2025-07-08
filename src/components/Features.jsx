@@ -47,7 +47,7 @@ const Features = () => {
     <section className="features-section" id="features">
       <div className="features-container">
         <div className="section-header center">
-          <h2 className="section-title">Why Choose CrackIt</h2>
+          <h2 className="section-title">Why Choose CrackTest</h2>
           <p className="section-subtitle">
             Everything you need to crack competitive exams in Pakistan — all in one place.
           </p>

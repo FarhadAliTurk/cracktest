@@ -1,7 +1,7 @@
 // Footer.jsx
 import React from 'react';
 import './Footer.css';
-import { FaFacebookF, FaLinkedinIn, FaArrowRight, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -55,14 +55,14 @@ const Footer = () => {
             <p>Get free test tips and new updates every week.</p>
             <form className="newsletter-form">
               <input type="email" placeholder="Your email address" required />
-              <button type="submit"><FaArrowRight /></button>
+              <button type="submit">Subscribe</button>
             </form>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} CrackIt — All Rights Reserved</p>
+          <p>&copy; {new Date().getFullYear()} CrackTest — All Rights Reserved</p>
         </div>
       </div>
     </footer>
