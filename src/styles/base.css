@@ -206,3 +206,12 @@ section {
 .bg-accent {
   background-color: var(--accent-color);
 }
+
+
+.follow-support-msg {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+

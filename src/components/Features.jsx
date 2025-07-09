@@ -11,32 +11,32 @@ import {
 
 const features = [
   {
-    icon: <FaClipboardCheck />,
+    icon: <FaClipboardCheck aria-hidden="true" />,
     title: "Extensive Question Banks",
     description: "Thousands of MCQs across categories with regular updates and syllabus alignment."
   },
   {
-    icon: <FaChartPie />,
+    icon: <FaChartPie aria-hidden="true" />,
     title: "Smart Performance Insights",
     description: "Visual progress charts and AI-powered topic analysis to help you focus where it matters."
   },
   {
-    icon: <FaClock />,
+    icon: <FaClock aria-hidden="true" />,
     title: "Exam-Like Timed Practice",
     description: "Master pressure with realistic timers, auto-submits, and instant results."
   },
   {
-    icon: <FaMobileAlt />,
+    icon: <FaMobileAlt aria-hidden="true" />,
     title: "100% Mobile Responsive",
     description: "Study anywhere — phone, tablet, or laptop — with smooth and optimized layouts."
   },
   {
-    icon: <FaBookReader />,
+    icon: <FaBookReader aria-hidden="true" />,
     title: "Instant Explanations",
     description: "Learn with real-time correct answers and explanations to strengthen your concepts."
   },
   {
-    icon: <FaUserFriends />,
+    icon: <FaUserFriends aria-hidden="true" />,
     title: "Peer Support Community",
     description: "Connect with aspirants, ask doubts, and discuss preparation strategies."
   }
@@ -44,10 +44,10 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="features-section" id="features">
+    <section className="features-section" id="features" aria-labelledby="features-title">
       <div className="features-container">
         <div className="section-header center">
-          <h2 className="section-title">Why Choose CrackTest</h2>
+          <h2 className="section-title" id="features-title">Why Choose CrackTest</h2>
           <p className="section-subtitle">
             Everything you need to crack competitive exams in Pakistan — all in one place.
           </p>
@@ -55,11 +55,11 @@ const Features = () => {
 
         <div className="features-grid">
           {features.map((feature, index) => (
-            <div className="feature-card" key={index}>
+            <article className="feature-card" key={index} aria-label={`Feature: ${feature.title}`}>
               <div className="feature-icon">{feature.icon}</div>
               <h3 className="feature-title">{feature.title}</h3>
               <p className="feature-description">{feature.description}</p>
-            </div>
+            </article>
           ))}
         </div>
       </div>

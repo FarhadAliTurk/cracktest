@@ -13,8 +13,8 @@ const recognizedLogos = [
 
 const AboutUs = () => {
   return (
-    <section id="about" className="about-section">
-      <div className="background-pattern"></div>
+    <section id="about" className="about-section" aria-labelledby="about-title">
+      <div className="background-pattern" aria-hidden="true"></div>
 
       <motion.div 
         className="about-container"
@@ -23,7 +23,7 @@ const AboutUs = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="about-title">About CrackTest</h2>
+        <h2 className="about-title" id="about-title">About CrackTest</h2>
         <p className="about-description">
           CrackTest is Pakistan’s trusted exam prep platform helping students crack Grade 14+ government tests with smart MCQs and real-time insights.
         </p>
@@ -34,8 +34,10 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
+          role="region"
+          aria-labelledby="trusted-title"
         >
-          <h4 className="trusted-title">Trusted by Candidates of:</h4>
+          <h3 className="trusted-title" id="trusted-title">Trusted by Candidates of:</h3>
           <div className="logo-grid">
             {recognizedLogos.map((logo, index) => (
               <motion.div
@@ -46,7 +48,13 @@ const AboutUs = () => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <img src={logo.image} alt={logo.name} loading="lazy" />
+                <img
+                  src={logo.image}
+                  alt={`${logo.name} Logo`}
+                  width="100"
+                  height="auto"
+                  loading="lazy"
+                />
               </motion.div>
             ))}
           </div>

@@ -1,4 +1,3 @@
-// FollowGate.jsx
 import React, { useState } from 'react';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import './FollowGate.css';
@@ -12,34 +11,44 @@ const FollowGate = ({ onUnlock }) => {
       li: 'https://linkedin.com/in/farhad-ali-turk-135369305'
     };
     window.open(urls[platform], '_blank');
-    setVisited(prev => ({ ...prev, [platform]: true }));
+    setVisited((prev) => ({ ...prev, [platform]: true }));
   };
 
   const unlocked = visited.fb && visited.li;
 
   return (
-    <div className="follow-gate-backdrop">
+    <div className="follow-gate-backdrop" role="dialog" aria-labelledby="follow-title" aria-modal="true">
       <div className="follow-gate-modal">
-        <h3 className="follow-title">Before You Begin</h3>
+        <h3 id="follow-title" className="follow-title">Before You Begin</h3>
         <p className="follow-subtitle">Follow us to unlock this quiz</p>
-        <div className="follow-buttons">
-          <button 
-            className={`follow-btn fb ${visited.fb ? 'visited' : ''}`} 
+        <p className="follow-support-msg">
+          Your support means a lot! Consider contributing to help us keep creating.
+        </p><br />
+
+        <div className="follow-buttons" role="group" aria-label="Follow on social media">
+          <button
+            className={`follow-btn fb ${visited.fb ? 'visited' : ''}`}
             onClick={() => handleVisit('fb')}
+            aria-pressed={visited.fb}
+            aria-label="Follow on Facebook"
           >
-            <FaFacebookF /> Facebook
+            <FaFacebookF aria-hidden="true" /> Facebook
           </button>
-          <button 
-            className={`follow-btn li ${visited.li ? 'visited' : ''}`} 
+          <button
+            className={`follow-btn li ${visited.li ? 'visited' : ''}`}
             onClick={() => handleVisit('li')}
+            aria-pressed={visited.li}
+            aria-label="Follow on LinkedIn"
           >
-            <FaLinkedinIn /> LinkedIn
+            <FaLinkedinIn aria-hidden="true" /> LinkedIn
           </button>
         </div>
-        <button 
-          className="btn btn-primary unlock-btn" 
-          disabled={!unlocked} 
+
+        <button
+          className="btn btn-primary unlock-btn"
+          disabled={!unlocked}
           onClick={onUnlock}
+          aria-label={unlocked ? 'Start Quiz' : 'Follow both to unlock quiz'}
         >
           {unlocked ? 'Start Quiz' : 'Follow to Unlock'}
         </button>

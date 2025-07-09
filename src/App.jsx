@@ -4,7 +4,7 @@ import './styles/base.css';
 import './styles/utilities.css';
 import './styles/animations.css';
 import './styles/loader.css';
-import Hero from './components/Hero'; // Hero loaded eagerly for LCP boost
+import Hero from './components/Hero'; // Eagerly loaded to boost LCP
 
 // Lazy-loaded components
 const Navbar = lazy(() => import('./components/Navbar'));

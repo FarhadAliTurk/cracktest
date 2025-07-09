@@ -54,12 +54,12 @@ const QuizCategories = () => {
   }
 
   return (
-    <section className="categories-section" id="categories">
+    <section className="categories-section" id="categories" aria-labelledby="category-title">
       <div className="background-pattern"></div>
 
       <div className="categories-container">
         <div className="section-header">
-          <h2 className="section-title">Quiz Categories</h2>
+          <h2 className="section-title" id="category-title">Quiz Categories</h2>
           <p className="section-subtitle">
             Smartly categorized MCQs for all 14-grade job tests in Pakistan.
           </p>
@@ -76,13 +76,21 @@ const QuizCategories = () => {
             <motion.div
               key={index}
               className="category-card"
+              role="button"
+              tabIndex={0}
+              aria-label={`Start ${category.name} quiz`}
               onClick={() => handleCategorySelect(category)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleCategorySelect(category);
+              }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05, duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="category-icon">{category.icon}</div>
+              <div className="category-icon">
+                {React.cloneElement(category.icon, { 'aria-hidden': true })}
+              </div>
               <h3 className="category-title">{category.name}</h3>
               <p className="category-count">{category.count}+ Questions</p>
             </motion.div>

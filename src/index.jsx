@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
 
+// FontAwesome Optimization
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-
-// FontAwesome tree-shaking optimization
 library.add(fas, fab);
 
+// Render App
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -20,5 +20,5 @@ root.render(
   </React.StrictMode>
 );
 
-// Optional: measure performance
+// Measure performance (optional)
 reportWebVitals();

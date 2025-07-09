@@ -4,10 +4,10 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa'
 
 const Contact = () => {
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section" id="contact" aria-labelledby="contact-title">
       <div className="contact-container">
         <div className="section-header">
-          <h2 className="section-title">Contact Us</h2>
+          <h2 className="section-title" id="contact-title">Contact Us</h2>
           <p className="section-subtitle">
             We’re here to support your journey. Reach out anytime!
           </p>
@@ -15,25 +15,25 @@ const Contact = () => {
 
         <div className="contact-grid">
           {/* Info Panel */}
-          <div className="contact-info">
-            <ContactItem icon={<FaMapMarkerAlt />} title="Office" text="123 Blue Area, Islamabad, Pakistan" />
-            <ContactItem icon={<FaPhoneAlt />} title="Phone" text={
+          <div className="contact-info" role="complementary" aria-label="Contact information">
+            <ContactItem icon={<FaMapMarkerAlt aria-hidden="true" />} title="Office" text="123 Blue Area, Islamabad, Pakistan" />
+            <ContactItem icon={<FaPhoneAlt aria-hidden="true" />} title="Phone" text={
               <>
                 <a href="tel:+92511234567">+92 51 1234567</a><br />
                 <a href="tel:+923001234567">+92 300 1234567</a>
               </>
             } />
-            <ContactItem icon={<FaEnvelope />} title="Email" text={
+            <ContactItem icon={<FaEnvelope aria-hidden="true" />} title="Email" text={
               <>
                 <a href="mailto:info@cracktest.com">info@cracktest.com</a><br />
                 <a href="mailto:support@cracktest.com">support@cracktest.com</a>
               </>
             } />
-            <ContactItem icon={<FaClock />} title="Hours" text="Mon–Fri: 9AM–6PM | Sat: 10AM–4PM" />
+            <ContactItem icon={<FaClock aria-hidden="true" />} title="Hours" text="Mon–Fri: 9AM–6PM | Sat: 10AM–4PM" />
           </div>
 
           {/* Form Panel */}
-          <form className="contact-form">
+          <form className="contact-form" aria-label="Contact form">
             <div className="form-group">
               <label htmlFor="name">Full Name</label>
               <input id="name" type="text" placeholder="John Doe" required />

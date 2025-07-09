@@ -8,7 +8,6 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const sectionsRef = useRef([]);
 
-  // Scroll detection with throttle
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50);
     const scrollPosition = window.scrollY + 100;
@@ -58,7 +57,7 @@ const Navbar = () => {
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}>
       <div className="container">
-        <a href="#home" className="navbar-brand" aria-label="CrackIt Home">
+        <a href="#home" className="navbar-brand" aria-label="CrackTest home link">
           <span className="logo-text">CrackTest</span>
           <span className="logo-dot" aria-hidden="true">.</span>
         </a>
@@ -66,18 +65,14 @@ const Navbar = () => {
         <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(prev => !prev)}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={mobileMenuOpen}
           aria-controls="main-navigation"
         >
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        <nav
-          id="main-navigation"
-          className={`navbar-nav ${mobileMenuOpen ? 'open' : ''}`}
-          role="navigation"
-        >
+        <nav id="main-navigation" className={`navbar-nav ${mobileMenuOpen ? 'open' : ''}`} role="navigation" aria-label="Main Navigation">
           <div className="nav-links">
             {[
               { id: 'home', label: 'Home' },

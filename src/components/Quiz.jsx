@@ -22,8 +22,8 @@ const Quiz = ({ category, onClose }) => {
 
   useEffect(() => {
     if (category && quizData[category]) {
-    setQuestions([...quizData[category]]); // Keep original order
-  }
+      setQuestions([...quizData[category]]);
+    }
   }, [category]);
 
   const handleOptionSelect = (option) => {
@@ -67,9 +67,9 @@ const Quiz = ({ category, onClose }) => {
 
   if (questions.length === 0) {
     return (
-      <div className="quiz-loading">
+      <div className="quiz-loading" role="status" aria-live="polite">
         <div className="loading-spinner">
-          <FaSpinner />
+          <FaSpinner aria-hidden="true" />
         </div>
         <p>Loading quiz...</p>
       </div>
@@ -78,17 +78,17 @@ const Quiz = ({ category, onClose }) => {
 
   if (quizCompleted) {
     return (
-      <div className="quiz-container">
+      <div className="quiz-container" role="main">
         <div className="quiz-header">
-          <h2>Quiz Completed!</h2>
-          <button className="btn-close" onClick={onClose}>
-            <FaTimes />
+          <h2 role="heading">Quiz Completed!</h2>
+          <button className="btn-close" onClick={onClose} aria-label="Close quiz">
+            <FaTimes aria-hidden="true" />
           </button>
         </div>
 
         <div className="quiz-result">
           <div className="result-icon">
-            {score >= questions.length / 2 ? <FaCheckCircle /> : <FaTimesCircle />}
+            {score >= questions.length / 2 ? <FaCheckCircle aria-hidden="true" /> : <FaTimesCircle aria-hidden="true" />}
           </div>
           <h3>Your Score: {score}/{questions.length}</h3>
           <p className="result-message">
@@ -102,11 +102,11 @@ const Quiz = ({ category, onClose }) => {
           </p>
 
           <div className="quiz-actions">
-            <button className="btn btn-primary" onClick={resetQuiz}>
-              <FaRedo /> Retry Quiz
+            <button className="btn btn-primary" onClick={resetQuiz} aria-label="Retry this quiz">
+              <FaRedo aria-hidden="true" /> Retry Quiz
             </button>
-            <button className="btn btn-outline" onClick={onClose}>
-              <FaList /> Choose Another Category
+            <button className="btn btn-outline" onClick={onClose} aria-label="Choose another category">
+              <FaList aria-hidden="true" /> Choose Another Category
             </button>
           </div>
         </div>
@@ -117,26 +117,26 @@ const Quiz = ({ category, onClose }) => {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div className="quiz-container">
+    <div className="quiz-container" role="main">
       <div className="quiz-header">
         <h2>{category} Quiz</h2>
-        <button className="btn-close" onClick={onClose}>
-          <FaTimes />
+        <button className="btn-close" onClick={onClose} aria-label="Close quiz">
+          <FaTimes aria-hidden="true" />
         </button>
       </div>
 
       <div className="quiz-progress">
-        <div className="progress-bar">
+        <div className="progress-bar" aria-label="Quiz progress">
           <div
             className="progress-fill"
-            style={{ width: `${((currentQuestionIndex) / questions.length) * 100}%` }}
+            style={{ width: `${(currentQuestionIndex / questions.length) * 100}%` }}
           ></div>
         </div>
         <span>Question {currentQuestionIndex + 1} of {questions.length}</span>
       </div>
 
       <div className="quiz-timer">
-        <FaClock /> Time Left: {timeLeft}s
+        <FaClock aria-hidden="true" /> Time Left: {timeLeft}s
       </div>
 
       <div className="quiz-question">
@@ -150,6 +150,7 @@ const Quiz = ({ category, onClose }) => {
             className={`option-btn ${selectedOption === option ? 'selected' : ''}`}
             onClick={() => handleOptionSelect(option)}
             disabled={selectedOption !== null}
+            aria-label={`Option ${String.fromCharCode(65 + index)}: ${option}`}
           >
             <span className="option-letter">{String.fromCharCode(65 + index)}</span>
             <span className="option-text">{option}</span>
@@ -159,15 +160,15 @@ const Quiz = ({ category, onClose }) => {
 
       <div className="quiz-actions">
         {selectedOption !== null && (
-          <div className={`feedback ${selectedOption === currentQuestion.correctAnswer ? 'correct' : 'incorrect'}`}>
+          <div className={`feedback ${selectedOption === currentQuestion.correctAnswer ? 'correct' : 'incorrect'}`} role="alert">
             {selectedOption === currentQuestion.correctAnswer ? (
               <>
-                <FaCheckCircle />
+                <FaCheckCircle aria-hidden="true" />
                 <p>Correct! Well done.</p>
               </>
             ) : (
               <>
-                <FaTimesCircle />
+                <FaTimesCircle aria-hidden="true" />
                 <p>Correct answer: {currentQuestion.correctAnswer}</p>
               </>
             )}
@@ -178,6 +179,7 @@ const Quiz = ({ category, onClose }) => {
           className="btn btn-primary"
           onClick={handleNextQuestion}
           disabled={selectedOption === null}
+          aria-label={currentQuestionIndex < questions.length - 1 ? 'Next question' : 'Finish quiz'}
         >
           {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
         </button>

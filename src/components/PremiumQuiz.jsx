@@ -1,118 +1,76 @@
-// PremiumQuiz.jsx
 import React from 'react';
 import './PremiumQuiz.css';
 import { 
-  FaCrown, 
-  FaCheck, 
-  FaChartLine, 
-  FaBookOpen,
-  FaUserTie,
-  FaClock,
-  FaShieldAlt
+  FaChartLine, FaBookOpen, FaUserTie, FaClock, FaCheck, FaCrown, FaShieldAlt 
 } from 'react-icons/fa';
+
+const premiumFeatures = [
+  {
+    icon: <FaChartLine />,
+    title: 'Advanced Analytics',
+    desc: 'Track your progress with detailed performance reports.'
+  },
+  {
+    icon: <FaBookOpen />,
+    title: 'Exclusive Question Banks',
+    desc: 'Access premium-only questions and mock tests.'
+  },
+  {
+    icon: <FaUserTie />,
+    title: 'Expert Guidance',
+    desc: 'Get tips from successful candidates and subject experts.'
+  },
+  {
+    icon: <FaClock />,
+    title: 'Time Management Tools',
+    desc: 'Practice with timed tests and improve your speed.'
+  }
+];
 
 const PremiumQuiz = () => {
   return (
-    <section className="premium-section" id="premium">
-      <div className="premium-container">
-        <div className="premium-content">
-          <div className="premium-text">
-            <div className="premium-header">
-              <h2 className="section-title">Unlock Premium Features</h2>
-              <p className="section-subtitle">
-                Get access to exclusive content and tools to maximize your success.
-              </p>
+    <section className="premium-section categories-section" id="premium">
+      <div className="background-pattern"></div>
+
+      <div className="categories-container">
+        <div className="section-header">
+          <h2 className="section-title">
+            <FaCrown style={{ color: '#f5b301', marginRight: '8px' }} /> Unlock Premium Features
+          </h2>
+          <p className="section-subtitle">
+            Get exclusive tools to supercharge your exam prep.
+          </p>
+        </div>
+
+        <div className="categories-grid">
+          {premiumFeatures.map((feature, index) => (
+            <div key={index} className="category-card premium-locked">
+              <div className="category-icon">{feature.icon}</div>
+              <h3 className="category-title">{feature.title}</h3>
+              <p className="category-count">{feature.desc}</p>
+              <div className="premium-blur">🔒 Premium</div>
             </div>
-            
-            <div className="premium-features">
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <FaChartLine />
-                </div>
-                <div className="feature-text">
-                  <h4>Advanced Analytics</h4>
-                  <p>Track your progress with detailed performance reports.</p>
-                </div>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <FaBookOpen />
-                </div>
-                <div className="feature-text">
-                  <h4>Exclusive Question Banks</h4>
-                  <p>Access premium-only questions and mock tests.</p>
-                </div>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <FaUserTie />
-                </div>
-                <div className="feature-text">
-                  <h4>Expert Guidance</h4>
-                  <p>Get tips from successful candidates and subject experts.</p>
-                </div>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <FaClock />
-                </div>
-                <div className="feature-text">
-                  <h4>Time Management Tools</h4>
-                  <p>Practice with timed tests and improve your speed.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="premium-card">
-            <div className="flex items-center gap-2 mb-4">
-              <FaCrown className="text-primary text-2xl" />
-              <span className="font-bold text-dark">PREMIUM</span>
-            </div>
-            
-            <div className="price-tag">Rs. 999<span className="text-lg">/mo</span></div>
-            <div className="price-period">Billed monthly. Cancel anytime.</div>
-            
-            <div className="premium-benefits">
-              <div className="benefit-item">
-                <FaCheck />
-                <span>All 12 question categories</span>
-              </div>
-              <div className="benefit-item">
-                <FaCheck />
-                <span>5000+ premium questions</span>
-              </div>
-              <div className="benefit-item">
-                <FaCheck />
-                <span>Full-length mock tests</span>
-              </div>
-              <div className="benefit-item">
-                <FaCheck />
-                <span>Detailed explanations</span>
-              </div>
-              <div className="benefit-item">
-                <FaCheck />
-                <span>Performance tracking</span>
-              </div>
-            </div>
-            
-            <button className="btn btn-primary w-full mt-4">
-              Upgrade Now
-            </button>
-            
-            <div className="flex items-center gap-2 mt-4 text-sm text-gray">
-              <FaShieldAlt />
-              <span>Secure payment. 7-day money back guarantee.</span>
-            </div>
+          ))}
+        </div>
+
+        <div className="premium-upgrade-card">
+          <h3 className="upgrade-title">Go Premium for Rs. 999/mo</h3>
+          <p className="upgrade-subtitle">Billed monthly. Cancel anytime.</p>
+
+          <ul className="premium-benefits-list">
+            <li><FaCheck /> All 12 question categories</li>
+            <li><FaCheck /> 5000+ premium questions</li>
+            <li><FaCheck /> Full-length mock tests</li>
+            <li><FaCheck /> Detailed explanations</li>
+            <li><FaCheck /> Performance tracking</li>
+          </ul>
+
+          <button className="btn btn-primary mt-3">Upgrade Now</button>
+          <div className="secure-note">
+            <FaShieldAlt /> Secure payment. 7-day money back guarantee.
           </div>
         </div>
       </div>
-      
-      <div className="decorative-shape shape-1"></div>
-      <div className="decorative-shape shape-2"></div>
     </section>
   );
 };

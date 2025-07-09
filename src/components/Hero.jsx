@@ -11,11 +11,9 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="hero-section" aria-label="Hero section">
+    <section id="home" className="hero-section" aria-label="Hero Section">
       <div className="hero-container">
         <div className="hero-content">
-
-          {/* Text Content */}
           <div className="hero-text">
             <h1 className="hero-title">
               Crack <span>Job Tests</span> with Confidence
@@ -23,8 +21,6 @@ const Hero = () => {
             <p className="hero-subtitle">
               Master every MCQ and secure your Grade 14 job. Trusted by thousands of smart candidates across Pakistan.
             </p>
-
-            {/* CTA + Stats */}
             <div className="hero-cta">
               <button
                 className="btn btn-primary btn-lg hover-scale"
@@ -34,7 +30,7 @@ const Hero = () => {
                 Start Practicing
               </button>
 
-              <div className="hero-stats" aria-label="Statistics summary">
+              <div className="hero-stats" aria-label="App Statistics">
                 <div className="stat-item">
                   <div className="stat-number">
                     <CountUp end={15000} duration={2.5} separator="," />+
@@ -57,14 +53,13 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Hero Image */}
-          <div className="hero-visual" role="img" aria-label="Visual success representation">
+          <div className="hero-visual" role="img" aria-label="Student celebrating job success">
             <div className="hero-image-container">
               <picture>
                 <source srcSet={HeroImageWebP} type="image/webp" />
                 <img
                   src={HeroImageWebP}
-                  alt="Successful candidate holding certificate"
+                  alt="Successful student with certificate"
                   width="600"
                   height="400"
                   loading="eager"
@@ -77,7 +72,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

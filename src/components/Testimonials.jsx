@@ -28,10 +28,10 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="testimonials-section" id="testimonials">
+    <section className="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
       <div className="testimonials-container">
         <div className="section-header center">
-          <h2 className="section-title">Success Stories</h2>
+          <h2 className="section-title" id="testimonials-title">Success Stories</h2>
           <p className="section-subtitle">
             Real candidates. Real results. Real impact.
           </p>
@@ -39,17 +39,24 @@ const Testimonials = () => {
 
         <div className="testimonials-grid">
           {testimonials.map((item, index) => (
-            <div key={index} className="testimonial-card">
-              <FaQuoteRight className="quote-icon" />
+            <blockquote key={index} className="testimonial-card" aria-label={`Testimonial from ${item.author}`}>
+              <FaQuoteRight className="quote-icon" aria-hidden="true" />
               <p className="testimonial-text">"{item.text}"</p>
-              <div className="testimonial-author">
-                <img src={item.avatar} alt={item.author} className="author-avatar" />
+              <footer className="testimonial-author">
+                <img
+                  src={item.avatar}
+                  alt={`Photo of ${item.author}`}
+                  className="author-avatar"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                />
                 <div className="author-info">
                   <h4>{item.author}</h4>
                   <p>{item.role}</p>
                 </div>
-              </div>
-            </div>
+              </footer>
+            </blockquote>
           ))}
         </div>
       </div>
