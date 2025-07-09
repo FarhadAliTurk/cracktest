@@ -20,7 +20,7 @@
 
 ```
 
-crackit/
+cracktest/
 ├── public/
 │   ├── index.html
 │   ├── favicon.ico, icons, meta images
@@ -42,7 +42,7 @@ crackit/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/crackit.git
+git clone https://github.com/your-username/cracktest.git
 cd crackit
 ````
 
