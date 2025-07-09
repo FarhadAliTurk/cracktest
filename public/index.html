@@ -12,10 +12,10 @@
     <meta name="author" content="Farhad Ali Turk" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Optimized Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Preload Important Assets -->
     <link rel="preload" as="image" href="%PUBLIC_URL%/quiz-preview.png" />
@@ -28,13 +28,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
 
-    <!-- Social (OG + Twitter) -->
+    <!-- Social Meta -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.cracktest.xyz/" />
     <meta property="og:title" content="CrackTest - Best App for Government Job Tests in Pakistan" />
     <meta property="og:description" content="Prepare for IBA, STS, NTS, and other job tests with CrackTest. A modern quiz app with categorized MCQs and responsive design." />
     <meta property="og:image" content="%PUBLIC_URL%/quiz-preview.png" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.cracktest.xyz/" />
     <meta name="twitter:title" content="CrackTest - React Quiz App for Job Test Preparation" />
