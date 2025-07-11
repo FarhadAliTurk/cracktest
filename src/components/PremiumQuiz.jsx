@@ -1,77 +1,84 @@
-import React from 'react';
-import './PremiumQuiz.css';
-import { 
-  FaChartLine, FaBookOpen, FaUserTie, FaClock, FaCheck, FaCrown, FaShieldAlt 
-} from 'react-icons/fa';
+import React from "react";
+import "./PremiumQuiz.css";
+import { motion } from "framer-motion";
+import {
+  FaCrown,
+  FaKey,
+  FaShieldAlt,
+  FaGem,
+  FaUserSecret,
+  FaWhatsapp,
+} from "react-icons/fa";
 
-const premiumFeatures = [
+const premiumCategories = [
   {
-    icon: <FaChartLine />,
-    title: 'Advanced Analytics',
-    desc: 'Track your progress with detailed performance reports.'
+    name: "JST Past Papers 2023-2024 (Official)",
+    icon: <FaCrown />,
+    count: 100,
+    price: "Rs. 150",
+    tag: "🔥 Most Wanted",
   },
   {
-    icon: <FaBookOpen />,
-    title: 'Exclusive Question Banks',
-    desc: 'Access premium-only questions and mock tests.'
+    name: "PST Solved Papers 2022-2023 (100% Verified)",
+    icon: <FaKey />,
+    count: 100,
+    price: "Rs. 120",
+    tag: "🔥 Most Wanted",
   },
   {
-    icon: <FaUserTie />,
-    title: 'Expert Guidance',
-    desc: 'Get tips from successful candidates and subject experts.'
+    name: "General Science Mega Set (All Boards)",
+    icon: <FaShieldAlt />,
+    count: 180,
+    price: "Rs. 100",
+    tag: null,
   },
   {
-    icon: <FaClock />,
-    title: 'Time Management Tools',
-    desc: 'Practice with timed tests and improve your speed.'
-  }
+    name: "IQ & Reasoning 2024 Preparation",
+    icon: <FaGem />,
+    count: 100,
+    price: "Rs. 80",
+    tag: null,
+  },
+  {
+    name: "Most Repeated MCQs (All Tests)",
+    icon: <FaUserSecret />,
+    count: 250,
+    price: "Rs. 160",
+    tag: "🔥 Most Wanted",
+  },
 ];
 
 const PremiumQuiz = () => {
   return (
-    <section className="premium-section categories-section" id="premium">
-      <div className="background-pattern"></div>
+    <div id="premium" className="premium-container">
+      {premiumCategories.map((category, index) => (
+        <motion.div
+          key={index}
+          className="premium-card"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <div className="premium-badge">Premium</div>
+          <div className="premium-icon">{category.icon}</div>
+          <div className="premium-title">{category.name}</div>
+          <div className="premium-count">{category.count} Real MCQs</div>
+          <div className="premium-price">{category.price}</div>
 
-      <div className="categories-container">
-        <div className="section-header">
-          <h2 className="section-title">
-            <FaCrown style={{ color: '#f5b301', marginRight: '8px' }} /> Unlock Premium Features
-          </h2>
-          <p className="section-subtitle">
-            Get exclusive tools to supercharge your exam prep.
-          </p>
-        </div>
+          <a
+            href="https://wa.me/923161193300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="whatsapp-btn">
+              <FaWhatsapp /> Unlock via WhatsApp
+            </button>
+          </a>
 
-        <div className="categories-grid">
-          {premiumFeatures.map((feature, index) => (
-            <div key={index} className="category-card premium-locked">
-              <div className="category-icon">{feature.icon}</div>
-              <h3 className="category-title">{feature.title}</h3>
-              <p className="category-count">{feature.desc}</p>
-              <div className="premium-blur">🔒 Premium</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="premium-upgrade-card">
-          <h3 className="upgrade-title">Go Premium for Rs. 999/mo</h3>
-          <p className="upgrade-subtitle">Billed monthly. Cancel anytime.</p>
-
-          <ul className="premium-benefits-list">
-            <li><FaCheck /> All 12 question categories</li>
-            <li><FaCheck /> 5000+ premium questions</li>
-            <li><FaCheck /> Full-length mock tests</li>
-            <li><FaCheck /> Detailed explanations</li>
-            <li><FaCheck /> Performance tracking</li>
-          </ul>
-
-          <button className="btn btn-primary mt-3">Upgrade Now</button>
-          <div className="secure-note">
-            <FaShieldAlt /> Secure payment. 7-day money back guarantee.
-          </div>
-        </div>
-      </div>
-    </section>
+          {category.tag && <div className="most-wanted">{category.tag}</div>}
+        </motion.div>
+      ))}
+    </div>
   );
 };
 

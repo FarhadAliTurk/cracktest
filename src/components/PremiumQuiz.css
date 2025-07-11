@@ -1,63 +1,118 @@
-.premium-locked {
-  position: relative;
-  filter: blur(1px);
-  opacity: 0.8;
-  pointer-events: none;
+.premium-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 20px;
 }
 
-.premium-blur {
-  position: absolute;
-  top: 6px;
-  right: 8px;
-  background: #f5b301;
-  color: #fff;
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-.premium-upgrade-card {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: #fff;
-  border: 2px solid #f5b301;
-  border-radius: 12px;
+.premium-card {
+  background: linear-gradient(135deg, #ffffff, #f1f5f9);
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 16px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  position: relative;
 }
 
-.premium-upgrade-card .upgrade-title {
-  font-size: 1.5rem;
-  color: #333;
-  font-weight: 700;
+.premium-card:hover {
+  transform: scale(1.03);
 }
 
-.premium-upgrade-card .upgrade-subtitle {
-  color: #666;
-  margin-bottom: 1rem;
+/* Icon at top */
+.premium-icon {
+  font-size: 30px;
+  color: #ff9800;
+  margin-bottom: 8px;
 }
 
-.premium-benefits-list {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  margin: 1rem 0;
+/* Title */
+.premium-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 6px;
 }
 
-.premium-benefits-list li {
-  display: flex;
+/* Question count */
+.premium-count {
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+/* Price text */
+.premium-price {
+  font-size: 14px;
+  color: #e11d48;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* WhatsApp unlock button */
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 0.5rem;
-  color: #333;
+  gap: 5px;
 }
 
-.secure-note {
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  justify-content: center;
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+/* Top right premium badge */
+.premium-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #facc15;
+  color: #1f2937;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* 🔥 Most Wanted animation */
+.most-wanted {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ef4444;
+  margin-top: 6px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .premium-card {
+    padding: 12px;
+  }
+
+  .premium-title {
+    font-size: 14px;
+  }
+
+  .premium-price {
+    font-size: 13px;
+  }
+
+  .premium-icon {
+    font-size: 24px;
+  }
 }

@@ -11,7 +11,6 @@ const Navbar = lazy(() => import('./components/Navbar'));
 const AboutUs = lazy(() => import('./components/AboutUs'));
 const QuizCategories = lazy(() => import('./components/QuizCategories'));
 const PremiumQuiz = lazy(() => import('./components/PremiumQuiz'));
-const Features = lazy(() => import('./components/Features'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -34,7 +33,6 @@ function App() {
         <AboutUs />
         <QuizCategories />
         <PremiumQuiz />
-        <Features />
         <Testimonials />
         <Contact />
         <Footer />

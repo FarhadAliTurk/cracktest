@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "@coreui/icons": "^3.0.1",
-    "@coreui/icons-react": "^2.3.0",   
+    "@coreui/icons-react": "^2.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
@@ -32,6 +32,7 @@
     "react-use": "^17.6.0",
     "react-visibility-sensor": "^5.1.1",
     "styled-components": "^6.1.18",
+    "swiper": "^11.2.10",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

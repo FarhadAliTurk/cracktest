@@ -59,9 +59,18 @@ const QuizCategories = () => {
 
       <div className="categories-container">
         <div className="section-header">
-          <h2 className="section-title" id="category-title">Quiz Categories</h2>
+          <motion.h2
+            className="section-title"
+            id="category-title"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Explore Quiz Categories
+          </motion.h2>
           <p className="section-subtitle">
-            Smartly categorized MCQs for all 14-grade job tests in Pakistan.
+            Master each topic smartly for JST, PST, and Grade 14 Tests in Pakistan.
           </p>
         </div>
 
@@ -98,7 +107,12 @@ const QuizCategories = () => {
         </motion.div>
       </div>
 
-      {showFollowGate && <FollowGate onUnlock={handleUnlock} />}
+      {showFollowGate && (
+        <FollowGate
+          onUnlock={handleUnlock}
+          onClose={() => setShowFollowGate(false)} // ✅ Fix for close button
+        />
+      )}
     </section>
   );
 };

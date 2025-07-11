@@ -106,6 +106,26 @@
 }
 
 
+/* Swiper overrides */
+.testimonials-slider {
+  padding: 2rem 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-color);
+}
+
+.swiper-pagination-bullet {
+  background: var(--primary-color);
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+
 
 
 

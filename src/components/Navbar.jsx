@@ -26,7 +26,7 @@ const Navbar = () => {
   useEffect(() => {
     sectionsRef.current = [
       'home', 'about', 'categories', 'premium',
-      'features', 'testimonials', 'contact'
+      'testimonials', 'contact'
     ].map(id => document.getElementById(id));
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -79,7 +79,6 @@ const Navbar = () => {
               { id: 'about', label: 'About' },
               { id: 'categories', label: 'Quiz' },
               { id: 'premium', label: 'Premium', icon: <FaCrown /> },
-              { id: 'features', label: 'Features' },
               { id: 'testimonials', label: 'Testimonials' },
               { id: 'contact', label: 'Contact' }
             ].map(({ id, label, icon }) => (
@@ -94,7 +93,7 @@ const Navbar = () => {
                 aria-current={activeSection === id ? 'page' : undefined}
               >
                 <span>{label}</span>
-                {icon && <span className="premium-badge" aria-hidden="true">{icon}</span>}
+                {icon && <span className="premium-icon" aria-hidden="true">{icon}</span>}
               </a>
             ))}
           </div>
