@@ -5,6 +5,14 @@
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -33,11 +41,18 @@
 }
 
 .navbar-brand {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--dark-color);
-  display: flex;
-  align-items: center;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5rem;
+  object-fit: contain;
 }
 
 .logo-dot {
@@ -46,6 +61,8 @@
   background-color: var(--primary-color);
   border-radius: 50%;
   margin-left: 4px;
+  display: inline-block;
+  transform: translateY(-2px);
 }
 
 .navbar-nav {
@@ -94,7 +111,6 @@
   width: 100%;
 }
 
-/* ✅ Premium Link – Now Balanced in Size */
 .premium-link {
   display: flex;
   align-items: center;
@@ -104,29 +120,39 @@
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
   background-color: transparent;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
-
 
 .premium-link:hover {
   background-color: rgba(79, 70, 229, 0.08);
+  transform: scale(1.05);
 }
 
 .premium-link.active {
   background-color: rgba(79, 70, 229, 0.12);
 }
 
-/* ✅ Premium Icon - Smaller */
+@keyframes crown-glow {
+  0%, 100% {
+    color: var(--primary-color);
+    text-shadow: none;
+  }
+  50% {
+    color: gold;
+    text-shadow: 0 0 6px gold;
+  }
+}
+
 .premium-icon {
-  font-size: 0.65rem; /* ✅ smaller and matches text size */
+  font-size: 1rem;
   margin-left: 0.15rem;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
-  transform: translateY(1px); /* ✅ vertically aligns better */
+  transform: translateY(1px);
+  animation: crown-glow 2.4s infinite ease-in-out;
 }
-
 
 .mobile-menu-toggle {
   display: none;
@@ -138,7 +164,6 @@
   z-index: 1001;
 }
 
-/* Mobile Styles */
 @media (max-width: 992px) {
   .mobile-menu-toggle {
     display: block;

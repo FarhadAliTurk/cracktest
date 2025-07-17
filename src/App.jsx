@@ -10,10 +10,11 @@ import Hero from './components/Hero'; // Eagerly loaded to boost LCP
 const Navbar = lazy(() => import('./components/Navbar'));
 const AboutUs = lazy(() => import('./components/AboutUs'));
 const QuizCategories = lazy(() => import('./components/QuizCategories'));
-const PremiumQuiz = lazy(() => import('./components/PremiumQuiz'));
+const PDFLibrary = lazy(() => import('./components/PDFLibrary'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
+const WhatsAppPopup = lazy(() => import('./components/WhatsAppPopup')); // New lazy-loaded popup
 
 function App() {
   return (
@@ -32,13 +33,14 @@ function App() {
         <Hero />
         <AboutUs />
         <QuizCategories />
-        <PremiumQuiz />
+        <PDFLibrary />
         <Testimonials />
         <Contact />
         <Footer />
+        <WhatsAppPopup /> {/* Added here to appear above all content */}
       </Suspense>
     </div>
   );
 }
 
-export default App;  
+export default App;

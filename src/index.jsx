@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'; // ✅ PWA registration
 
 // FontAwesome Optimization
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -20,5 +21,8 @@ root.render(
   </React.StrictMode>
 );
 
-// Measure performance (optional)
+// ✅ Register the service worker (for PWA support)
+serviceWorkerRegistration.register();
+
+// Optional: Measure performance
 reportWebVitals();

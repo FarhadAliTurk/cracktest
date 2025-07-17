@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { FaTimes, FaBars, FaCrown } from 'react-icons/fa';
 import './Navbar.css';
+import Logo from '../assets/android-chrome-512x512.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
       const { offsetTop, offsetHeight, id } = section;
       if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
         if (activeSection !== id) {
-          setActiveSection(id);
+          requestAnimationFrame(() => setActiveSection(id));
         }
         break;
       }
@@ -25,8 +26,7 @@ const Navbar = () => {
 
   useEffect(() => {
     sectionsRef.current = [
-      'home', 'about', 'categories', 'premium',
-      'testimonials', 'contact'
+      'home', 'about', 'categories', 'pdf-library', 'testimonials', 'contact'
     ].map(id => document.getElementById(id));
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -34,7 +34,7 @@ const Navbar = () => {
   }, [handleScroll]);
 
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    document.body.classList.toggle('overflow-hidden', mobileMenuOpen);
   }, [mobileMenuOpen]);
 
   useEffect(() => {
@@ -58,6 +58,7 @@ const Navbar = () => {
     <header className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}>
       <div className="container">
         <a href="#home" className="navbar-brand" aria-label="CrackTest home link">
+          <img src={Logo} alt="Logo" className="logo-icon" />
           <span className="logo-text">CrackTest</span>
           <span className="logo-dot" aria-hidden="true">.</span>
         </a>
@@ -65,9 +66,8 @@ const Navbar = () => {
         <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(prev => !prev)}
-          aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
-          aria-controls="main-navigation"
         >
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -78,18 +78,19 @@ const Navbar = () => {
               { id: 'home', label: 'Home' },
               { id: 'about', label: 'About' },
               { id: 'categories', label: 'Quiz' },
-              { id: 'premium', label: 'Premium', icon: <FaCrown /> },
+              { id: 'pdf-library', label: 'PDF Library', icon: <FaCrown /> },
               { id: 'testimonials', label: 'Testimonials' },
               { id: 'contact', label: 'Contact' }
             ].map(({ id, label, icon }) => (
               <a
                 key={id}
                 href={`#${id}`}
-                className={`nav-link ${id === 'premium' ? 'premium-link' : ''} ${activeSection === id ? 'active' : ''}`}
+                className={`nav-link ${id === 'pdf-library' ? 'premium-link' : ''} ${activeSection === id ? 'active' : ''}`}
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick(id);
                 }}
+                onKeyDown={(e) => e.key === 'Enter' && handleNavClick(id)}
                 aria-current={activeSection === id ? 'page' : undefined}
               >
                 <span>{label}</span>

@@ -5,7 +5,7 @@ import {
   FaGlobeAsia, FaFlask, FaCalculator, FaLaptopCode,
   FaMosque, FaBook, FaBrain, FaLandmark, FaMoneyBillWave,
   FaUniversity, FaMicroscope, FaStar, FaChalkboardTeacher,
-  FaCalendarAlt, FaBookOpen, FaBolt
+  FaCalendarAlt, FaBookOpen, FaBolt, FaCrown
 } from 'react-icons/fa';
 import Quiz from './Quiz';
 import FollowGate from './FollowGate';
@@ -16,6 +16,20 @@ const QuizCategories = () => {
   const [nextCategory, setNextCategory] = useState(null);
 
   const categories = [
+    {
+      name: "JST Past Papers 2023-2024 (Official)",
+      icon: <FaStar />,
+      count: 100,
+      label: "🔥 Most Wanted",
+      isPremium: true
+    },
+    {
+      name: "PST Solved Papers 2022-2023 (100% Verified)",
+      icon: <FaBolt />,
+      count: 100,
+      label: "🔥 Most Wanted",
+      isPremium: true
+    },
     { name: "Pakistan GK", icon: <FaGlobeAsia />, count: 250 },
     { name: "Everyday Science", icon: <FaFlask />, count: 180 },
     { name: "Maths", icon: <FaCalculator />, count: 150 },
@@ -97,11 +111,26 @@ const QuizCategories = () => {
               transition={{ delay: index * 0.05, duration: 0.4 }}
               viewport={{ once: true }}
             >
+              {category.isPremium && (
+                <div className="premium-badge" aria-label="Premium">
+                  <FaCrown />
+                </div>
+              )}
               <div className="category-icon">
                 {React.cloneElement(category.icon, { 'aria-hidden': true })}
               </div>
               <h3 className="category-title">{category.name}</h3>
               <p className="category-count">{category.count}+ Questions</p>
+              {category.label && (
+                <motion.p
+                  className={`category-label ${category.isPremium ? 'premium-animated' : ''}`}
+                  initial={{ scale: 0.95 }}
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  {category.label}
+                </motion.p>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -110,7 +139,7 @@ const QuizCategories = () => {
       {showFollowGate && (
         <FollowGate
           onUnlock={handleUnlock}
-          onClose={() => setShowFollowGate(false)} // ✅ Fix for close button
+          onClose={() => setShowFollowGate(false)}
         />
       )}
     </section>

@@ -2,7 +2,7 @@ import React from 'react';
 import './AboutUs.css';
 import { motion } from 'framer-motion';
 
-const recognizedLogos = [ 
+const recognizedLogos = [
   { name: 'SPSC', image: 'https://spsc.gos.pk/images/logo2.png' },
   { name: 'IBA', image: 'https://apply.sts.net.pk/assets/images/logos/logo.png' },
   { name: 'NTS', image: 'https://www.nts.org.pk/new/img/nts_logo.png' },
@@ -16,7 +16,7 @@ const AboutUs = () => {
     <section id="about" className="about-section" aria-labelledby="about-title">
       <div className="background-pattern" aria-hidden="true"></div>
 
-      <motion.div 
+      <motion.div
         className="about-container"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ const AboutUs = () => {
           CrackTest is Pakistan’s trusted exam prep platform helping students crack Grade 14+ government tests with smart MCQs and real-time insights.
         </p>
 
-        <motion.div 
+        <motion.div
           className="trusted-by"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}

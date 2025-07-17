@@ -78,6 +78,7 @@
 }
 
 .category-card {
+  position: relative;
   background: white;
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
@@ -125,6 +126,44 @@
   color: var(--text-muted);
 }
 
+.category-label {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+/* Premium Crown Icon Badge */
+.premium-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.2rem;
+  color: gold;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Glow Animation for Premium Label */
+@keyframes blinkGlow {
+  0%, 100% {
+    color: #f59e0b;
+    text-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+  }
+  50% {
+    color: #d97706;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.9);
+  }
+}
+
+.category-label.premium-animated {
+  animation: blinkGlow 1.5s infinite;
+  display: inline-block;
+}
+
 /* Tablet */
 @media (max-width: 768px) {
   .categories-grid {
@@ -155,5 +194,9 @@
 
   .category-count {
     font-size: 0.85rem;
+  }
+
+  .category-label {
+    font-size: 0.75rem;
   }
 }

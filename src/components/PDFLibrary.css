@@ -1,0 +1,136 @@
+.premium-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.section-header p {
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pdf-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pdf-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.15);
+}
+
+.premium-badge {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: linear-gradient(to right, #f59e0b, #e67e22);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.premium-badge:hover {
+  transform: scale(1.05);
+}
+
+.pdf-icon {
+  font-size: 2.5rem;
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+.price-tag {
+  background: #f0fdf4;
+  color: #15803d;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin: 1rem auto;
+  display: inline-block;
+  border: 1px solid #bbf7d0;
+  transition: background 0.3s;
+}
+
+.price-tag:hover {
+  background: #bbf7d0;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+}
+
+.purchase-modal {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #25D366;
+  z-index: 999;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .purchase-modal {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
