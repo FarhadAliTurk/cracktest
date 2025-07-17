@@ -13,6 +13,13 @@ body.overflow-hidden {
   overflow: hidden;
 }
 
+:target::before {
+  content: '';
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -45,14 +52,18 @@ body.overflow-hidden {
   align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--dark-color);
+  color: var(--primary-color);
 }
 
 .logo-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   margin-right: 0.5rem;
-  object-fit: contain;
+  vertical-align: middle;
+}
+
+.logo-text {
+  color: var(--primary-color);
 }
 
 .logo-dot {
@@ -69,6 +80,7 @@ body.overflow-hidden {
   display: flex;
   align-items: center;
   gap: 2rem;
+  transition: right 0.3s ease-in-out;
 }
 
 .nav-links {
@@ -84,6 +96,12 @@ body.overflow-hidden {
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 .nav-link.active {
@@ -115,8 +133,7 @@ body.overflow-hidden {
   display: flex;
   align-items: center;
   gap: 0.2rem;
-  font-weight: 500 !important;
-  color: var(--primary-color) !important;
+  font-weight: 500;
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
   background-color: transparent;
@@ -129,6 +146,7 @@ body.overflow-hidden {
 }
 
 .premium-link.active {
+  color: var(--primary-color);
   background-color: rgba(79, 70, 229, 0.12);
 }
 
@@ -182,7 +200,6 @@ body.overflow-hidden {
     align-items: center;
     gap: 3rem;
     box-shadow: var(--shadow-lg);
-    transition: right 0.3s ease;
     z-index: 1000;
   }
 
@@ -214,5 +231,14 @@ body.overflow-hidden {
   .navbar-nav {
     width: 100%;
     max-width: 100%;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    width: 24px;
+    height: 24px;
   }
 }

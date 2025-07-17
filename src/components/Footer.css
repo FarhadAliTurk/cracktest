@@ -17,9 +17,8 @@
   margin-bottom: 3rem;
 }
 
-/* Brand */
 .footer-logo {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
   display: flex;
@@ -56,15 +55,14 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
   background: var(--primary-color);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-/* Links */
 .footer-links h4,
 .footer-newsletter h4 {
   font-size: 1.1rem;
@@ -84,15 +82,14 @@
 .footer-links ul li a {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .footer-links ul li a:hover {
   color: var(--primary-color);
-  padding-left: 4px;
+  padding-left: 6px;
 }
 
-/* Newsletter */
 .footer-newsletter p {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
@@ -101,15 +98,16 @@
 
 .newsletter-form {
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
 .newsletter-form input {
-  flex: 1;
   padding: 0.75rem 1rem;
   border-radius: var(--radius);
   border: none;
   font-family: inherit;
+  font-size: 0.9rem;
 }
 
 .newsletter-form input:focus {
@@ -117,8 +115,13 @@
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
-.newsletter-form button {
-  padding: 0 1.2rem;
+.subscribe-btn-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.subscribe-btn-wrapper button {
+  padding: 0.5rem 1.5rem;
   background-color: var(--primary-color);
   border: none;
   border-radius: var(--radius);
@@ -127,11 +130,10 @@
   transition: background 0.3s ease;
 }
 
-.newsletter-form button:hover {
+.subscribe-btn-wrapper button:hover {
   background-color: var(--primary-dark);
 }
 
-/* Bottom */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
@@ -140,13 +142,13 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsive */
+/* Responsive Tweaks */
 @media (max-width: 576px) {
   .newsletter-form {
     flex-direction: column;
   }
 
-  .newsletter-form button {
+  .subscribe-btn-wrapper button {
     width: 100%;
     padding: 0.75rem;
   }

@@ -1,7 +1,8 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { FaTimes, FaBars, FaCrown } from 'react-icons/fa';
 import './Navbar.css';
-import Logo from '../assets/android-chrome-512x512.png';
+import Logo from '../assets/logo-icon.svg';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -58,7 +59,7 @@ const Navbar = () => {
     <header className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}>
       <div className="container">
         <a href="#home" className="navbar-brand" aria-label="CrackTest home link">
-          <img src={Logo} alt="Logo" className="logo-icon" />
+          <img src={Logo} alt="CrackTest logo" className="logo-icon" />
           <span className="logo-text">CrackTest</span>
           <span className="logo-dot" aria-hidden="true">.</span>
         </a>

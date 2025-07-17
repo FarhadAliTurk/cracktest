@@ -1,35 +1,49 @@
+:root {
+  --primary-color: #4f46e5;
+  --dark-color: #1e293b;
+  --text-muted: #475569;
+  --accent-color: #f59e0b;
+  --success-color: #25D366;
+}
+
 .premium-section {
-  padding: 4rem 2rem;
+  padding: 5rem 1.5rem;
   background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+}
+
+.pdf-container {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .section-header h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--dark-color);
 }
 
 .section-header p {
-  color: #6b7280;
+  font-size: 1rem;
+  color: var(--text-muted);
   margin-top: 0.5rem;
 }
 
 .pdf-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .pdf-card {
-  background: white;
+  background: #fff;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pdf-card:hover {
@@ -41,25 +55,33 @@
   position: absolute;
   top: -10px;
   right: 15px;
-  background: linear-gradient(to right, #f59e0b, #e67e22);
+  background: linear-gradient(to right, var(--accent-color), #e67e22);
   color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
+  padding: 5px 14px;
   font-size: 0.75rem;
-  font-weight: 600;
+  border-radius: 20px;
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: all 0.3s ease;
-}
-
-.premium-badge:hover {
-  transform: scale(1.05);
+  gap: 6px;
+  font-weight: 600;
 }
 
 .pdf-icon {
   font-size: 2.5rem;
   color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+.pdf-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.pdf-pages {
+  font-size: 0.95rem;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
@@ -72,26 +94,22 @@
   margin: 1rem auto;
   display: inline-block;
   border: 1px solid #bbf7d0;
-  transition: background 0.3s;
-}
-
-.price-tag:hover {
-  background: #bbf7d0;
 }
 
 .whatsapp-btn {
-  background: #25D366;
+  background: var(--success-color);
   color: white;
-  border: none;
-  padding: 10px 15px;
+  padding: 10px 16px;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  width: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 100%;
   transition: background 0.3s ease;
 }
 
@@ -107,9 +125,11 @@
   padding: 1rem 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-left: 4px solid #25D366;
+  border-left: 4px solid var(--success-color);
   z-index: 999;
   animation: fadeInUp 0.5s ease;
+  font-size: 0.95rem;
+  color: var(--dark-color);
 }
 
 @keyframes fadeInUp {

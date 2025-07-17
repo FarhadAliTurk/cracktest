@@ -60,6 +60,7 @@ const Hero = () => {
                 <img
                   src={HeroImageWebP}
                   alt="Successful student with certificate"
+                  className="hero-image"
                   width="600"
                   height="400"
                   loading="eager"

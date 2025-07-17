@@ -5,6 +5,7 @@ import './styles/utilities.css';
 import './styles/animations.css';
 import './styles/loader.css';
 import Hero from './components/Hero'; // Eagerly loaded to boost LCP
+import Logo from './assets/logo-icon.svg'; // Logo for fallback
 
 // Lazy-loaded components
 const Navbar = lazy(() => import('./components/Navbar'));
@@ -23,8 +24,9 @@ function App() {
         fallback={
           <div className="loader-container" style={{ minHeight: '100vh' }}>
             <div className="text-logo-loader">
-              <span className="logo-text">CrackTest</span>
-              <span className="logo-dot">.</span>
+              <img src={Logo} alt="CrackTest Logo" className="loader-logo-icon" />
+              <span className="loader-logo-text">CrackTest</span>
+              <span className="loader-logo-dot"></span>
             </div>
           </div>
         }
@@ -37,7 +39,7 @@ function App() {
         <Testimonials />
         <Contact />
         <Footer />
-        <WhatsAppPopup /> {/* Added here to appear above all content */}
+        <WhatsAppPopup />
       </Suspense>
     </div>
   );
