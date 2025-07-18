@@ -4,11 +4,14 @@
   --text-muted: #475569;
   --accent-color: #f59e0b;
   --success-color: #25D366;
+  --card-bg: #ffffff;
+  --card-border: #e0e7ff;
+  --hover-shadow: rgba(79, 70, 229, 0.15);
 }
 
 .premium-section {
   padding: 5rem 1.5rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+  background: linear-gradient(135deg, #f8fafc, #f0f4ff);
 }
 
 .pdf-container {
@@ -17,13 +20,13 @@
   text-align: center;
 }
 
-.section-header h2 {
+.heading {
   font-size: 2.25rem;
   font-weight: 800;
   color: var(--dark-color);
 }
 
-.section-header p {
+.subheading {
   font-size: 1rem;
   color: var(--text-muted);
   margin-top: 0.5rem;
@@ -37,33 +40,40 @@
 }
 
 .pdf-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  outline: none;
+}
+
+.pdf-card:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
 }
 
 .pdf-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 12px 24px var(--hover-shadow);
 }
 
 .premium-badge {
   position: absolute;
-  top: -10px;
-  right: 15px;
+  top: -12px;
+  right: 16px;
   background: linear-gradient(to right, var(--accent-color), #e67e22);
   color: white;
-  padding: 5px 14px;
+  padding: 6px 14px;
   font-size: 0.75rem;
   border-radius: 20px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 6px;
-  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
 .pdf-icon {
@@ -74,15 +84,15 @@
 
 .pdf-title {
   font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
   color: var(--dark-color);
+  margin-bottom: 0.5rem;
 }
 
-.pdf-pages {
+.pdf-mcqs {
   font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .price-tag {
@@ -91,9 +101,9 @@
   padding: 6px 12px;
   border-radius: 6px;
   font-weight: 700;
-  margin: 1rem auto;
-  display: inline-block;
   border: 1px solid #bbf7d0;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .whatsapp-btn {
@@ -143,14 +153,30 @@
   }
 }
 
-@media (max-width: 480px) {
+/* Responsive */
+@media (max-width: 768px) {
   .pdf-grid {
-    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .purchase-modal {
     left: 1rem;
     right: 1rem;
     bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .premium-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
   }
 }

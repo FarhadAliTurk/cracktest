@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,39 +12,35 @@
     <meta name="description" content="CrackTest is a modern React quiz app to help students prepare for IBA, NTS, STS, PTS, and government job tests in Pakistan. Practice MCQs easily with 12+ subjects." />
     <meta name="keywords" content="CrackTest, CrackIt, IBA test MCQs, STS quiz, PTS, NTS jobs, SPSC, government jobs Pakistan, job test preparation, MCQ app Pakistan, online quiz Pakistan" />
 
-    <!-- Fonts Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" /></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" media="all" />
 
-    <!-- Preload Key Assets -->
-    <link rel="preload" as="image" href="%PUBLIC_URL%/quiz-preview.png" />
-    <link rel="preload" as="image" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <!-- Preload Important Images -->
+    <link rel="preload" as="image" href="/quiz-preview.png" />
+    <link rel="preload" as="image" href="/favicon-32x32.png" />
+    <link rel="preload" as="image" href="/assets/logo-icon.png" type="image/png" />
+    <link rel="preload" href="/assets/success.webp" as="image" type="image/webp" />
 
     <!-- Favicons -->
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/android-chrome-512x512.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
 
-    <!-- Open Graph Meta -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.cracktest.xyz/" />
+    <!-- Social Meta -->
     <meta property="og:title" content="CrackTest - Best App for Government Job Tests in Pakistan" />
-    <meta property="og:description" content="Prepare for IBA, STS, NTS, and other job tests with CrackTest. A modern quiz app with categorized MCQs and responsive design." />
-    <meta property="og:image" content="%PUBLIC_URL%/quiz-preview.png" />
+    <meta property="og:description" content="Prepare for IBA, STS, NTS, and other job tests with CrackTest." />
+    <meta property="og:image" content="/quiz-preview.png" />
+    <meta property="og:url" content="https://www.cracktest.xyz/" />
+    <meta property="og:type" content="website" />
 
-    <!-- Twitter Meta -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://www.cracktest.xyz/" />
     <meta name="twitter:title" content="CrackTest - React Quiz App for Job Test Preparation" />
-    <meta name="twitter:description" content="Smart React-based quiz app for competitive test prep in Pakistan. Covers 12+ categories like Science, Computer, Islamiat, and more." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/quiz-preview.png" />
+    <meta name="twitter:description" content="Smart React-based quiz app for test prep in Pakistan." />
+    <meta name="twitter:image" content="/quiz-preview.png" />
   </head>
 
   <body>

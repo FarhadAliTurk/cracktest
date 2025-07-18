@@ -8,24 +8,31 @@ const PDFLibrary = () => {
   const premiumResources = [
     {
       id: 1,
-      title: 'FPSC Past Papers (2020–2023)',
-      pages: 78,
-      price: 'Rs. 150',
-      whatsappMsg: 'I want to buy FPSC Past Papers (2020–2023) for Rs. 150',
+      title: 'JST Past Papers (Sindh Govt, 2018–2024)',
+      mcqs: 100,
+      price: 'Rs. 199',
+      whatsappMsg: 'I want to buy JST Past Papers (Sindh Govt, 2018–2024) for Rs. 199',
     },
     {
       id: 2,
-      title: 'CSS Solved Essays Collection',
-      pages: 112,
-      price: 'Rs. 200',
-      whatsappMsg: 'Interested in CSS Solved Essays Collection for Rs. 200',
+      title: 'PST Solved Papers (IBA STS + SIBA)',
+      mcqs: 100,
+      price: 'Rs. 199',
+      whatsappMsg: 'Send PST Solved Papers (IBA STS + SIBA) for Rs. 199',
     },
     {
       id: 3,
-      title: 'PMS Compulsory Subjects Mega Pack',
-      pages: 215,
-      price: 'Rs. 300',
-      whatsappMsg: 'Please send PMS Compulsory Subjects Mega Pack (Rs. 300)',
+      title: 'JEST Solved Papers (IBA STS + SIBA)',
+      mcqs: 100,
+      price: 'Rs. 199',
+      whatsappMsg: 'Send JEST Solved Papers (IBA STS + SIBA) for Rs. 199',
+    },
+    {
+      id: 4,
+      title: 'BPS-14 Educator MCQ Pack (All Subjects)',
+      mcqs: 100,
+      price: 'Rs. 199',
+      whatsappMsg: 'Requesting BPS-14 Educator MCQ Pack (All Subjects) for Rs. 199',
     },
   ];
 
@@ -48,21 +55,21 @@ const PDFLibrary = () => {
     <section id="pdf-library" className="premium-section" aria-label="Premium PDF Library">
       <div className="pdf-container">
         <div className="section-header">
-          <h2>Premium PDF Resources</h2>
-          <p>Unlock verified past papers and exclusive study materials</p>
+          <h2 className="heading">📚 Premium PDF Resources</h2>
+          <p className="subheading">Unlock verified past papers and exclusive study material</p>
         </div>
 
         <div className="pdf-grid">
           {premiumResources.map((pdf) => (
-            <div key={pdf.id} className="pdf-card">
+            <div key={pdf.id} className="pdf-card" tabIndex={0}>
               <div className="premium-badge" aria-hidden="true">
                 <FaLock /> PREMIUM
               </div>
-              <div className="pdf-icon">
+              <div className="pdf-icon" role="img" aria-label="PDF file icon">
                 <FaFilePdf />
               </div>
               <h3 className="pdf-title">{pdf.title}</h3>
-              <p className="pdf-pages">{pdf.pages} pages</p>
+              <p className="pdf-mcqs">{pdf.mcqs} MCQs</p>
               <div className="price-tag">{pdf.price}</div>
               <button
                 className="whatsapp-btn"
