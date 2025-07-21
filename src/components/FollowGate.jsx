@@ -29,7 +29,7 @@ const FollowGate = ({ onUnlock, onClose }) => {
     const urls = {
       fb: 'https://www.facebook.com/profile.php?id=61551771230717&mibextid=ZbWKwL',
       li: 'https://linkedin.com/in/farhad-ali-turk-135369305',
-      wa: 'https://whatsapp.com/channel/0029VaFj3DcFsJbNFGHoUE0V'
+      wa: 'https://whatsapp.com/channel/0029VavgPrvA89MbWFLu1P10'
     };
     window.open(urls[platform], '_blank');
     setVisited((prev) => ({ ...prev, [platform]: true }));
