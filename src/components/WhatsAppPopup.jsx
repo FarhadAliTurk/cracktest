@@ -25,7 +25,7 @@ const WhatsAppPopup = () => {
   };
 
   const handleFollow = () => {
-    window.open('https://whatsapp.com/channel/0029VaFj3DcFsJbNFGHoUE0V', '_blank');
+    window.open('https://whatsapp.com/channel/0029VavgPrvA89MbWFLu1P10', '_blank');
     setShowPopup(false);
   };
 
