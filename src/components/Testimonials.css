@@ -1,0 +1,137 @@
+.testimonials-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #f8f9ff 0%, #eef1fc 100%);
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header.center {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.section-subtitle {
+  color: var(--gray-color);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--accent-color); /* Gold accent */
+  padding: 2rem;
+  border: 1px solid #e0e7ff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  color: rgba(79, 70, 229, 0.07);
+  color: rgba(245, 158, 11, 0.1); /* Subtle gold */
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+}
+
+.author-info h4 {
+  font-weight: 600;
+  margin: 0;
+  color: #1f1f1f;
+  font-size: 1.05rem;
+}
+
+.author-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .quote-icon {
+    font-size: 2rem;
+  }
+}
+
+
+/* Swiper overrides */
+.testimonials-slider {
+  padding: 2rem 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-color);
+}
+
+.swiper-pagination-bullet {
+  background: var(--primary-color);
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+

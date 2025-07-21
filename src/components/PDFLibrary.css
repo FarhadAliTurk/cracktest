@@ -1,0 +1,182 @@
+:root {
+  --primary-color: #4f46e5;
+  --dark-color: #1e293b;
+  --text-muted: #475569;
+  --accent-color: #f59e0b;
+  --success-color: #25D366;
+  --card-bg: #ffffff;
+  --card-border: #e0e7ff;
+  --hover-shadow: rgba(79, 70, 229, 0.15);
+}
+
+.premium-section {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, #f8fafc, #f0f4ff);
+}
+
+.pdf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--dark-color);
+}
+
+.subheading {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pdf-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  outline: none;
+}
+
+.pdf-card:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
+.pdf-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px var(--hover-shadow);
+}
+
+.premium-badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background: linear-gradient(to right, var(--accent-color), #e67e22);
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.pdf-icon {
+  font-size: 2.5rem;
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+.pdf-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.pdf-mcqs {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.price-tag {
+  background: #f0fdf4;
+  color: #15803d;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  border: 1px solid #bbf7d0;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-btn {
+  background: var(--success-color);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+}
+
+.purchase-modal {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid var(--success-color);
+  z-index: 999;
+  animation: fadeInUp 0.5s ease;
+  font-size: 0.95rem;
+  color: var(--dark-color);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pdf-grid {
+    gap: 1.5rem;
+  }
+
+  .purchase-modal {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .premium-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+}

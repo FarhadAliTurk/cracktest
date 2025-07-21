@@ -1,0 +1,12 @@
+/* src/index.css or App.css */
+body {
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}

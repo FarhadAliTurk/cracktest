@@ -1,0 +1,108 @@
+.whatsapp-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.whatsapp-popup {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  animation: fadeInUp 0.4s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.popup-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+.whatsapp-icon {
+  font-size: 3rem;
+  color: #25D366;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-popup h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.whatsapp-popup p {
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.btn-follow {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-follow:hover {
+  background: #128C7E;
+}
+
+.btn-later {
+  background: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-later:hover {
+  background: #f5f5f5;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
