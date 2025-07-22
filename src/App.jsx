@@ -5,7 +5,7 @@ import './styles/utilities.css';
 import './styles/animations.css';
 import './styles/loader.css';
 import Hero from './components/Hero'; // Eager load critical section
-import Logo from './assets/logo-icon.png';
+import Logo from './assets/logo-icon.webp';
 
 // Lazy-loaded components (non-critical)
 const Navbar = lazy(() => import('./components/Navbar'));

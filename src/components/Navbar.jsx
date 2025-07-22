@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { FaTimes, FaBars, FaCrown } from 'react-icons/fa';
 import './Navbar.css';
-import Logo from '../assets/logo-icon.png';
+import Logo from '../assets/logo-icon.webp';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,12 +25,27 @@ const Navbar = () => {
       'home', 'about', 'categories', 'pdf-library', 'testimonials', 'contact'
     ].map(id => document.getElementById(id));
 
+    // Cache section positions to avoid layout thrashing
+    let sectionPositions = [];
+    const updateSectionPositions = () => {
+      sectionPositions = sectionsRef.current.map(section => {
+        if (!section) return null;
+        return {
+          id: section.id,
+          offsetTop: section.offsetTop,
+          offsetHeight: section.offsetHeight
+        };
+      });
+    };
+    updateSectionPositions();
+    window.addEventListener('resize', updateSectionPositions, { passive: true });
+
     const updateActiveSection = () => {
       const scrollPosition = window.scrollY + 110;
       let found = false;
-      for (const section of sectionsRef.current) {
-        if (!section) continue;
-        const { offsetTop, offsetHeight, id } = section;
+      for (const pos of sectionPositions) {
+        if (!pos) continue;
+        const { offsetTop, offsetHeight, id } = pos;
         if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
           if (activeSection !== id) {
             setActiveSection(id);
@@ -46,7 +61,10 @@ const Navbar = () => {
 
     window.addEventListener('scroll', updateActiveSection, { passive: true });
     updateActiveSection(); // Set initial
-    return () => window.removeEventListener('scroll', updateActiveSection);
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateSectionPositions);
+    };
   }, [activeSection]);
 
   useEffect(() => {

@@ -84,7 +84,7 @@ const ContactItem = ({ icon, title, text }) => (
   <div className="contact-item">
     <div className="contact-icon">{icon}</div>
     <div className="contact-text">
-      <h4>{title}</h4>
+      <h3>{title}</h3>
       <p>{text}</p>
     </div>
   </div>

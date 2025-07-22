@@ -28,7 +28,7 @@
 
 .subheading {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: #334155; /* improved contrast for accessibility */
   margin-top: 0.5rem;
 }
 
@@ -91,7 +91,7 @@
 
 .pdf-mcqs {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: #334155; /* improved contrast for accessibility */
   margin-bottom: 0.75rem;
 }
 

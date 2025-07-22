@@ -69,7 +69,7 @@ const Testimonials = () => {
                     loading="lazy"
                   />
                   <div className="author-info">
-                    <h4>{item.author}</h4>
+                    <h3>{item.author}</h3>
                     <p>{item.role}</p>
                   </div>
                 </footer>
