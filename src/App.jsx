@@ -14,6 +14,8 @@ const QuizCategories = lazy(() => import('./components/QuizCategories'));
 const PDFLibrary = lazy(() => import('./components/PDFLibrary'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Contact = lazy(() => import('./components/Contact'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./components/TermsConditions'));
 const Footer = lazy(() => import('./components/Footer'));
 const WhatsAppPopup = lazy(() => import('./components/WhatsAppPopup'));
 
@@ -38,6 +40,8 @@ function App() {
         <PDFLibrary />
         <Testimonials />
         <Contact />
+        <PrivacyPolicy  />
+        <TermsConditions />
         <Footer />
         <WhatsAppPopup />
       </Suspense>

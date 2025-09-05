@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FaFacebookF, FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { HashLink as Link } from 'react-router-hash-link'; // Smooth scroll
 
 const Footer = () => {
   const handleSubmit = (e) => {
@@ -15,7 +16,8 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="footer-brand">
             <div className="footer-logo" aria-label="CrackTest logo">
-              <span className="logo-text">CrackTest</span><span className="logo-dot" aria-hidden="true"></span>
+              <span className="logo-text">CrackTest</span>
+              <span className="logo-dot" aria-hidden="true"></span>
             </div>
             <p className="tagline">
               Pakistan’s leading platform for test preparation — trusted by thousands of successful candidates.
@@ -40,12 +42,12 @@ const Footer = () => {
           <div className="footer-links">
             <h4>Explore</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#categories">Categories</a></li>
-              <li><a href="#pdf-library">Premium</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link smooth to="#home">Home</Link></li>
+              <li><Link smooth to="#about">About Us</Link></li>
+              <li><Link smooth to="#categories">Categories</Link></li>
+              <li><Link smooth to="#pdf-library">Premium</Link></li>
+              <li><Link smooth to="#testimonials">Testimonials</Link></li>
+              <li><Link smooth to="#contact">Contact</Link></li>
             </ul>
           </div>
 
@@ -53,10 +55,10 @@ const Footer = () => {
           <div className="footer-links">
             <h4>Legal</h4>
             <ul>
-              <li><a href="#privacy" tabIndex={0} className="footer-link-disabled" aria-label="Privacy Policy (coming soon)">Privacy Policy <span className="footer-link-tooltip">(coming soon)</span></a></li>
-              <li><a href="#terms" tabIndex={0} className="footer-link-disabled" aria-label="Terms of Service (coming soon)">Terms of Service <span className="footer-link-tooltip">(coming soon)</span></a></li>
-              <li><a href="#refund" tabIndex={0} className="footer-link-disabled" aria-label="Refund Policy (coming soon)">Refund Policy <span className="footer-link-tooltip">(coming soon)</span></a></li>
-              <li><a href="#cookies" tabIndex={0} className="footer-link-disabled" aria-label="Cookie Policy (coming soon)">Cookie Policy <span className="footer-link-tooltip">(coming soon)</span></a></li>
+              <li><Link smooth to="#privacy">Privacy Policy</Link></li>
+              <li><Link smooth to="#terms">Terms of Service</Link></li>
+              <li><Link smooth to="#refund">Refund Policy</Link></li>
+              <li><Link smooth to="#cookies">Cookie Policy</Link></li>
             </ul>
           </div>
 
