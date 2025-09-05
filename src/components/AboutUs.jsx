@@ -24,9 +24,14 @@ const AboutUs = () => {
         transition={{ duration: 0.8 }}
       >
         <h2 className="about-title" id="about-title">About CrackTest</h2>
-        <p className="about-description">
-          CrackTest is Pakistan’s trusted exam prep platform helping students crack Grade 14+ government tests with smart MCQs and real-time insights.
-        </p>
+         <p className="about-description">
+  CrackTest is Pakistan’s trusted online exam preparation platform, helping students and competitive exam candidates 
+  prepare for Grade 14+ government and private sector tests. We offer thousands of smart MCQs, past papers, and 
+  mock tests with instant feedback and performance tracking. Users can purchase quiz packages or subscribe to 
+  premium features through secure online payments. Our mission is to make exam prep accessible, affordable, and 
+  effective for learners across the country.
+</p>
+
 
         <motion.div
           className="trusted-by"
